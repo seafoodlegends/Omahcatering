@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ririn Catering Denpasar | Catering Rumahan</title>
+<meta name="description" content="Catering kantor, keluarga, dan acara di Denpasar. Pesan mudah lewat WhatsApp.">
+<meta property="og:title" content="Ririn Catering Denpasar | Catering Rumahan">
+<meta property="og:description" content="Catering kantor, keluarga, dan acara di Denpasar. Pesan mudah lewat WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a href="index.html" class="logo">RIRIN<small>CATERING DENPASAR</small></a>
+  <nav id="nav"><a href="index.html" class="active">Beranda</a><a href="menu.html">Menu</a></nav>
+  <div class="head-right">
+    <button type="button" class="btn outline cart-btn" onclick="openCart()">Pesanan <span data-count></span></button>
+    <button type="button" id="menu-btn" class="btn outline" aria-label="Buka menu">☰</button>
+  </div>
+</div></header>
+<main>
+<section class="hero"><div class="wrap">
+  <div><span class="eyebrow">Catering Denpasar</span>
+  <h1>Masakan rumahan untuk setiap acara Anda.</h1>
+  <p class="lead"><span data-name></span> menyiapkan hidangan segar untuk kantor, keluarga, dan acara di <span data-area></span>.</p>
+  <div class="actions"><a href="menu.html" class="btn big">Lihat Menu</a><a data-wa target="_blank" rel="noopener" class="btn outline big">Tanya via WhatsApp</a></div></div>
+  <img src="images/hero.jpg" alt="Hidangan Ririn Catering">
+</div></section>
+<section><div class="wrap"><h2>Tentang Kami</h2><div class="grid g4">
+  <div class="card"><h3>Dimasak setiap hari</h3><p class="muted">Bahan segar, rasa rumahan.</p></div>
+  <div class="card"><h3>Paket mulai <span data-min></span> pax</h3><p class="muted">Menu satuan tanpa minimum.</p></div>
+  <div class="card"><h3>Diantar ke lokasi</h3><p class="muted" data-area></p></div>
+  <div class="card"><h3>Pesan H-1</h3><p class="muted">Pesanan besar disarankan lebih awal.</p></div>
+</div></div></section>
+<section class="alt"><div class="wrap"><h2>Cara Pemesanan</h2><ol class="grid g4" style="list-style:none;padding:0">
+  <li class="card step"><b>01</b><h3>Buka halaman Menu</h3><p class="muted">Lihat paket dan menu beserta harga.</p></li>
+  <li class="card step"><b>02</b><h3>Pilih jumlah</h3><p class="muted">Atur jumlah, lalu tekan Tambah.</p></li>
+  <li class="card step"><b>03</b><h3>Isi data pengantaran</h3><p class="muted">Nama, tanggal, jam, dan alamat.</p></li>
+  <li class="card step"><b>04</b><h3>Kirim via WhatsApp</h3><p class="muted">Kami konfirmasi harga akhir.</p></li>
+</ol></div></section>
+<section><div class="wrap split">
+  <div><h2>Perkiraan Biaya</h2><p class="muted">Harga lengkap setiap menu ada di halaman Menu.</p><div class="actions"><a href="menu.html" class="btn big">Lihat Menu &amp; Harga</a></div></div>
+  <div class="card price-box">
+    <div class="row"><span>Paket nasi box</span><strong>mulai <span id="from-pkg"></span></strong></div>
+    <div class="row"><span>Menu satuan</span><strong>mulai <span id="from-menu"></span></strong></div>
+    <div class="row"><span>Ongkos kirim</span><strong>sesuai lokasi</strong></div>
+    <p class="note">* Harga di website hanya estimasi. Total akhir dikonfirmasi melalui WhatsApp.</p>
+  </div>
+</div></section>
+<section class="alt"><div class="wrap"><h2>Kata Pelanggan</h2><div id="reviews" class="grid g3"></div></div></section>
+</main>
+<footer><div class="wrap"><div>
+  <div><strong>RIRIN CATERING</strong><p>Catering hangat untuk harian dan acara di <span data-area style="display:inline"></span>.</p></div>
+  <div><strong>Halaman</strong><a href="index.html">Beranda</a><a href="menu.html">Daftar Menu</a></div>
+  <div><strong>Hubungi</strong><a data-wa target="_blank" rel="noopener">WhatsApp</a><span>Instagram: <span data-ig style="display:inline"></span></span></div>
+</div><div class="copy">© 2026 Ririn Catering</div></div></footer>
+
+<dialog id="cart">
+  <div class="dlg-head"><h2>Pesanan Anda</h2><button type="button" class="close" onclick="closeCart()" aria-label="Tutup">×</button></div>
+  <div id="cart-empty" class="empty"><p><strong>Belum ada menu dipilih</strong></p><a href="menu.html" class="btn">Lihat Menu</a></div>
+  <div id="cart-filled" hidden>
+    <div id="cart-list"></div>
+    <div class="sum"><span class="muted">Estimasi total</span><strong data-total></strong></div>
+    <p class="info">Harga di website hanya estimasi. Harga akhir dan ongkos kirim dikonfirmasi melalui WhatsApp.</p>
+    <form onsubmit="checkout(event)">
+      <label><span>Nama</span><input name="name" required maxlength="80" placeholder="Nama pemesan"></label>
+      <label><span>Nomor WhatsApp</span><input name="phone" type="tel" required maxlength="18" placeholder="08xxxxxxxxxx"></label>
+      <label><span>Tanggal</span><input name="date" type="date" required></label>
+      <label><span>Jam pengantaran</span><input name="time" type="time" required></label>
+      <label class="wide"><span>Alamat</span><textarea name="address" required maxlength="300" placeholder="Alamat lengkap"></textarea></label>
+      <label class="wide"><span>Catatan (opsional)</span><textarea name="note" maxlength="500"></textarea></label>
+      <button class="btn wa big block wide" type="submit">Pesan via WhatsApp</button>
+    </form>
+  </div>
+</dialog>
+
+<div class="bar"><div><small>Estimasi</small><strong data-total>Rp 0</strong></div><button type="button" class="btn" onclick="openCart()">Pesanan <span data-count></span></button></div>
+<div id="toast" role="status"></div>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

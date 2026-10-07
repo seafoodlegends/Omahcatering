@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Menu & Harga | Ririn Catering</title>
+<meta name="description" content="Pilih paket catering dan menu satuan Ririn Catering, atur jumlah, dan pesan lewat WhatsApp.">
+<meta property="og:title" content="Menu & Harga | Ririn Catering">
+<meta property="og:description" content="Pilih paket catering dan menu satuan Ririn Catering, atur jumlah, dan pesan lewat WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header><div class="wrap">
+  <a href="index.html" class="logo">RIRIN<small>CATERING DENPASAR</small></a>
+  <nav id="nav"><a href="index.html">Beranda</a><a href="menu.html" class="active">Menu</a></nav>
+  <div class="head-right">
+    <button type="button" class="btn outline cart-btn" onclick="openCart()">Pesanan <span data-count></span></button>
+    <button type="button" id="menu-btn" class="btn outline" aria-label="Buka menu">☰</button>
+  </div>
+</div></header>
+<main class="wrap" style="padding-top:40px;padding-bottom:64px">
+<h1>Menu &amp; Harga</h1>
+<p class="muted">Atur jumlah, tekan <strong>Tambah</strong>, lalu buka <strong>Pesanan</strong> untuk mengirim via WhatsApp.</p>
+<p class="note">* Harga di website hanya estimasi. Total akhir dikonfirmasi melalui WhatsApp.</p>
+<div id="filters" class="filters"></div>
+<section id="pkg-section" style="padding:24px 0"><h2>Paket Catering</h2><p class="muted">Minimal <span id="pkg-min"></span> pax per paket.</p><div id="packages" class="grid g4"></div></section>
+<section id="menu-section" style="padding:24px 0"><h2>Menu Satuan</h2><div id="menu" class="grid g2"></div></section>
+</main>
+<footer><div class="wrap"><div>
+  <div><strong>RIRIN CATERING</strong><p>Catering hangat untuk harian dan acara di <span data-area style="display:inline"></span>.</p></div>
+  <div><strong>Halaman</strong><a href="index.html">Beranda</a><a href="menu.html">Daftar Menu</a></div>
+  <div><strong>Hubungi</strong><a data-wa target="_blank" rel="noopener">WhatsApp</a><span>Instagram: <span data-ig style="display:inline"></span></span></div>
+</div><div class="copy">© 2026 Ririn Catering</div></div></footer>
+
+<dialog id="cart">
+  <div class="dlg-head"><h2>Pesanan Anda</h2><button type="button" class="close" onclick="closeCart()" aria-label="Tutup">×</button></div>
+  <div id="cart-empty" class="empty"><p><strong>Belum ada menu dipilih</strong></p><a href="menu.html" class="btn">Lihat Menu</a></div>
+  <div id="cart-filled" hidden>
+    <div id="cart-list"></div>
+    <div class="sum"><span class="muted">Estimasi total</span><strong data-total></strong></div>
+    <p class="info">Harga di website hanya estimasi. Harga akhir dan ongkos kirim dikonfirmasi melalui WhatsApp.</p>
+    <form onsubmit="checkout(event)">
+      <label><span>Nama</span><input name="name" required maxlength="80" placeholder="Nama pemesan"></label>
+      <label><span>Nomor WhatsApp</span><input name="phone" type="tel" required maxlength="18" placeholder="08xxxxxxxxxx"></label>
+      <label><span>Tanggal</span><input name="date" type="date" required></label>
+      <label><span>Jam pengantaran</span><input name="time" type="time" required></label>
+      <label class="wide"><span>Alamat</span><textarea name="address" required maxlength="300" placeholder="Alamat lengkap"></textarea></label>
+      <label class="wide"><span>Catatan (opsional)</span><textarea name="note" maxlength="500"></textarea></label>
+      <button class="btn wa big block wide" type="submit">Pesan via WhatsApp</button>
+    </form>
+  </div>
+</dialog>
+
+<div class="bar"><div><small>Estimasi</small><strong data-total>Rp 0</strong></div><button type="button" class="btn" onclick="openCart()">Pesanan <span data-count></span></button></div>
+<div id="toast" role="status"></div>
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
