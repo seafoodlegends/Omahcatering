@@ -4,12 +4,12 @@
    ========================================================= */
 
 const BUSINESS = {
-  name: "Ririn Catering",
-  // Nomor WhatsApp: format 62xxxxxxxxxx (tanpa + dan tanpa 0 di depan)
-  phone: "62000000000",
-  city: "Denpasar",
+  name: "Omah Catering",
+  // Nomor WhatsApp: format 62xxxxxxx (tanpa + dan tanpa 0 di depan)
+  phone: "62881037424004",
+  city: "Ubung Denpasar Utara",
   serviceArea: "Denpasar dan Sekitarnya",
-  instagram: "Rin catering",
+  instagram: "omah catering",
   minimumOrder: 20, // minimal pax untuk paket
 };
 
