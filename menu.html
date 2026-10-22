@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Menu & Harga | Ririn Catering</title>
-<meta name="description" content="Pilih paket catering dan menu satuan Ririn Catering, atur jumlah, dan pesan lewat WhatsApp.">
-<meta property="og:title" content="Menu & Harga | Ririn Catering">
-<meta property="og:description" content="Pilih paket catering dan menu satuan Ririn Catering, atur jumlah, dan pesan lewat WhatsApp.">
+<title>Menu | Omah Catering</title>
+<meta name="description" content="Pilih menu Omah Catering, atur jumlah porsi, dan pesan lewat WhatsApp.">
+<meta property="og:title" content="Menu | Omah Catering">
+<meta property="og:description" content="Pilih menu Omah Catering, atur jumlah porsi, dan pesan lewat WhatsApp.">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,26 +15,31 @@
 </head>
 <body>
 <header><div class="wrap">
-  <a href="index.html" class="logo">RIRIN<small>CATERING DENPASAR</small></a>
-  <nav id="nav"><a href="index.html">Beranda</a><a href="menu.html" class="active">Menu</a></nav>
+  <a href="index.html" class="logo">OMAH<small>CATERING DENPASAR</small></a>
   <div class="head-right">
     <button type="button" class="btn outline cart-btn" onclick="openCart()">Pesanan <span data-count></span></button>
-    <button type="button" id="menu-btn" class="btn outline" aria-label="Buka menu">☰</button>
+    <button type="button" id="menu-btn" class="btn outline" aria-label="Buka menu" aria-expanded="false" aria-controls="nav">☰</button>
   </div>
+  <nav id="nav"><a href="index.html">Beranda</a><a href="menu.html" class="active">Menu</a><a href="cara-pemesanan.html">Cara Pemesanan</a></nav>
 </div></header>
 <main class="wrap" style="padding-top:40px;padding-bottom:64px">
-<h1>Menu &amp; Harga</h1>
-<p class="muted">Atur jumlah, tekan <strong>Tambah</strong>, lalu buka <strong>Pesanan</strong> untuk mengirim via WhatsApp.</p>
+<h1>Menu</h1>
+<p class="muted">Ketik atau ubah jumlah porsi, tekan <strong>Tambah</strong>, lalu buka <strong>Pesanan</strong> untuk mengirim via WhatsApp.</p>
 <p class="note">* Harga di website hanya estimasi. Total akhir dikonfirmasi melalui WhatsApp.</p>
 <div id="filters" class="filters"></div>
-<section id="pkg-section" style="padding:24px 0"><h2>Paket Catering</h2><p class="muted">Minimal <span id="pkg-min"></span> pax per paket.</p><div id="packages" class="grid g4"></div></section>
-<section id="menu-section" style="padding:24px 0"><h2>Menu Satuan</h2><div id="menu" class="grid g2"></div></section>
+<div id="menu" class="grid g3 menu-grid"></div>
 </main>
 <footer><div class="wrap"><div>
-  <div><strong>RIRIN CATERING</strong><p>Catering hangat untuk harian dan acara di <span data-area style="display:inline"></span>.</p></div>
-  <div><strong>Halaman</strong><a href="index.html">Beranda</a><a href="menu.html">Daftar Menu</a></div>
-  <div><strong>Hubungi</strong><a data-wa target="_blank" rel="noopener">WhatsApp</a><span>Instagram: <span data-ig style="display:inline"></span></span></div>
-</div><div class="copy">© 2026 Ririn Catering</div></div></footer>
+  <div><strong>OMAH CATERING</strong><p>Catering hangat untuk harian dan acara di <span data-area style="display:inline"></span>.</p></div>
+  <div><strong>Halaman</strong><a href="index.html">Beranda</a><a href="menu.html">Daftar Menu</a><a href="cara-pemesanan.html">Cara Pemesanan</a></div>
+  <div><strong>Hubungi</strong>
+    <div class="social">
+      <a data-wa target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp"><i data-icon="whatsapp"></i></a>
+      <a data-link="instagram" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><i data-icon="instagram"></i></a>
+      <a data-link="facebook" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><i data-icon="facebook"></i></a>
+    </div>
+  </div>
+</div><div class="copy">© 2026 Omah Catering</div></div></footer>
 
 <dialog id="cart">
   <div class="dlg-head"><h2>Pesanan Anda</h2><button type="button" class="close" onclick="closeCart()" aria-label="Tutup">×</button></div>
