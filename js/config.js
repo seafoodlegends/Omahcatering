@@ -133,7 +133,7 @@ const MENU_ITEMS = [
     name: "Nasgor Sosis Bakso Telur",
     category: "Nasi Goreng",
     price: 17000,
-    image: "nasgor-sosis-bakso-telur.jpg",
+    image: "nasgor-sobak-telur.jpg",
     description: "Nasi goreng dengan sosis, bakso, dan telur.",
   },
   {
@@ -231,7 +231,7 @@ const MENU_ITEMS = [
     name: "Jus Jeruk Peras",
     category: "Minuman",
     price: 7000,
-    image: "jerukperas.jpg",
+    image: "jeruk.jpg",
     description: "Jus jeruk dari perasan jeruk segar.",
   },
   {
